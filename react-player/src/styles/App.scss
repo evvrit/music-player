@@ -5,10 +5,20 @@
 }
 
 h1,
-h2,
-h3 {
+h2 {
   color: rgb(67, 65, 65);
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h3,
+h4 {
+  font-weight: 400;
+  color: rgb(100, 100, 100);
 }
 
 @import "./player";
 @import "./song";
+@import "./library";
