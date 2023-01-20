@@ -7,7 +7,7 @@ function ChillHop() {
       artist: "invention_",
       cover: "https://i.scdn.co/image/ab67616d0000b273bfae77d24f20c98fd085b124",
       id: uuid(),
-      active: false,
+      active: true,
       color: ["#713fa2", "#fedab6"],
       audio: "https://mp3.chillhop.com/serve.php/?mp3=45157",
     },
