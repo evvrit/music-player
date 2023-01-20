@@ -8,6 +8,7 @@ import Library from "./components/Library";
 import Nav from "./components/Nav";
 // Import Util
 import data from "./util";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 function App() {
   // Ref
@@ -20,6 +21,7 @@ function App() {
     currentTime: 0,
     duration: 0,
   });
+  const [libraryStatus, setLibraryStatus] = useState(false);
   // Event Handlers
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
@@ -29,15 +31,17 @@ function App() {
   // Component
   return (
     <div className="App">
-      <Nav />
+      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
       <Song currentSong={currentSong} />
       <Player
         audioRef={audioRef}
         setIsPlaying={setIsPlaying}
         isPlaying={isPlaying}
         currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
+        songs={songs}
       />
       <Library
         audioRef={audioRef}
@@ -45,6 +49,7 @@ function App() {
         setCurrentSong={setCurrentSong}
         isPlaying={isPlaying}
         setSongs={setSongs}
+        libraryStatus={libraryStatus}
       />
       <audio
         onTimeUpdate={timeUpdateHandler}

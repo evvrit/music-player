@@ -3,6 +3,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  h1 {
+    font-family: "Abel", sans-serif;
+    letter-spacing: 0.2rem;
+  }
   button {
     backgorund: transparent;
     border: none;
