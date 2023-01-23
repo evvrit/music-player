@@ -32,9 +32,11 @@ function App() {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (direction === "forward") {
       await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      activeLibraryHandler(songs[(currentIndex + 1) % songs.length]);
     } else if (direction === "back") {
       if ((currentIndex - 1) % songs.length === -1) {
         await setCurrentSong(songs[songs.length - 1]);
+        activeLibraryHandler(songs[songs.length - 1]);
         if (isPlaying) audioRef.current.play();
         return;
       }
@@ -45,6 +47,23 @@ function App() {
         audioRef.current.play();
       }, 100);
     }
+  };
+  const activeLibraryHandler = (nextPrev) => {
+    const newSongs = songs.map((s) => {
+      if (s.id === nextPrev.id) {
+        return {
+          ...s,
+          active: true,
+        };
+      } else {
+        return {
+          ...s,
+          active: false,
+        };
+      }
+    });
+    setSongs(newSongs);
+    console.log("hey");
   };
   // Component
   return (
