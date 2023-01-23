@@ -1,2 +1,3 @@
 # music-player
-Creative React and Redux Music Player Project
+* Approaching React with a Music Player Project
+* Creative React and Redux with [Simo Edwin](https://github.com/developedbyed/)
