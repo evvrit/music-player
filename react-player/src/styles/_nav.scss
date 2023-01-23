@@ -10,14 +10,18 @@
   button {
     background: transparent;
     border: none;
+    color: rgb(30, 30, 30);
     cursor: pointer;
     border: 2px solid rgb(65, 65, 65);
     padding: 0.5rem;
     transition: all 0.3s ease;
-    &:hover {
-      background: rgb(65, 65, 65);
-      color: white;
-    }
+  }
+}
+
+@media (hover: hover) {
+  button:hover {
+    background: rgb(65, 65, 65);
+    color: white;
   }
 }
 
