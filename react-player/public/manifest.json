@@ -1,24 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Waves Music Player",
+  "short_name": "Waves",
+  "description": "Lo-fi study beats",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "wavesfavicon.ico",
+      "sizes": "150x150",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "wavesfavicon.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "500x500"
     }
   ],
   "start_url": ".",
+  "id": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
