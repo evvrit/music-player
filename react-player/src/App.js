@@ -8,7 +8,6 @@ import Library from "./components/Library";
 import Nav from "./components/Nav";
 // Import Data
 import data from "./data";
-import { library } from "@fortawesome/fontawesome-svg-core";
 
 function App() {
   // Ref
@@ -21,6 +20,7 @@ function App() {
     currentTime: 0,
     duration: 0,
   });
+  const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;
   const [libraryStatus, setLibraryStatus] = useState(false);
   // Event Handlers
   const timeUpdateHandler = (e) => {
@@ -43,6 +43,7 @@ function App() {
         setSongInfo={setSongInfo}
         songs={songs}
         setSongs={setSongs}
+        animationPercentage={animationPercentage}
       />
       <Library
         audioRef={audioRef}
