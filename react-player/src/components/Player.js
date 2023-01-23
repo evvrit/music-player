@@ -6,7 +6,6 @@ import {
   faAngleLeft,
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { playAudio } from "../util";
 
 const Player = ({
   currentSong,
@@ -19,6 +18,7 @@ const Player = ({
   songs,
   setSongs,
   animationPercentage,
+  skipTrackHandler,
 }) => {
   // Use Effect
   useEffect(() => {
@@ -56,30 +56,15 @@ const Player = ({
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
-  const skipTrackHandler = (direction) => {
-    let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    if (direction === "forward") {
-      setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-    } else if (direction === "back") {
-      if ((currentIndex - 1) % songs.length === -1) {
-        setCurrentSong(songs[songs.length - 1]);
-        playAudio(isPlaying, audioRef);
-        return;
-      }
-      setCurrentSong(songs[(currentIndex - 1) % songs.length]);
-    }
-    playAudio(isPlaying, audioRef);
+  // Style Input
+  const inputGradient = {
+    background: `linear-gradient(to right, ${currentSong.color[1]}, ${currentSong.color[0]})`,
   };
   return (
     <div className="player-container">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <div
-          style={{
-            background: `linear-gradient(to right, ${currentSong.color[1]}, ${currentSong.color[0]})`,
-          }}
-          className="track"
-        >
+        <div style={inputGradient} className="track">
           <input
             type="range"
             min={0}
