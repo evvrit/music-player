@@ -9,10 +9,6 @@
 .time-control {
   width: 50%;
   display: flex;
-  input {
-    width: 100%;
-    padding: 1rem 0rem;
-  }
   p {
     padding: 1rem;
   }
@@ -27,4 +23,25 @@
   svg {
     cursor: pointer;
   }
+}
+
+input[type="range"] {
+  width: 100%;
+  padding: 1rem 0rem;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: black;
+  }
+}
+
+.track {
+  background: lightcyan;
+  width: 100%;
+  height: 1rem;
 }
